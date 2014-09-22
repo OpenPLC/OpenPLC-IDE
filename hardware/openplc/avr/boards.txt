@@ -90,7 +90,7 @@ opmain.build.board=AVR_MEGA2560
 opmain.menu.cpu.atmega2560=OpenPLC Main Card (ATMega 2560)
 
 opmain.menu.cpu.atmega2560.upload.protocol=wiring
-opmain.menu.cpu.atmega2560.upload.maximum_size=258048
+opmain.menu.cpu.atmega2560.upload.maximum_size=253952
 opmain.menu.cpu.atmega2560.upload.speed=115200
 
 opmain.menu.cpu.atmega2560.bootloader.high_fuses=0xD8
