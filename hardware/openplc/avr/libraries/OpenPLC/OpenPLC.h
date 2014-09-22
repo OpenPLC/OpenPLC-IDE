@@ -10,43 +10,43 @@
 //Basic OpenPLC Definitions
 #define ON				1
 #define OFF				0
-#define ERROR_MSG		-1
-#define MAX_ERROR		10
-#define ERROR_TIMEOUT	10000
+#define ERROR_MSG			-1
+#define MAX_ERROR			10
+#define ERROR_TIMEOUT			10000
 
 //RS485 BUS Definitions
-#define DE_PIN		20
-#define LISTEN_PIN	21
+#define DE_PIN				20
+#define LISTEN_PIN			21
 
 //Possible PLC Status
-#define RUN			1
-#define STOP		2
-#define HALTED		3
+#define RUN				1
+#define STOP				2
+#define HALTED				3
 
 //PLC Status Switch Pins
-#define RUN_PIN			6
-#define STOP_PIN		7
-#define AUTO_PIN		8
+#define RUN_PIN				6
+#define STOP_PIN			7
+#define AUTO_PIN			8
 
 //Status Leds Pins
-#define RUN_LED		5
-#define ERROR_LED	3
+#define RUN_LED				5
+#define ERROR_LED			3
 
 //Boards
 #define NONE				0x00
-#define DISCRETE_INPUT		0x01
-#define DISCRETE_OUTPUT		0x02
+#define DISCRETE_INPUT			0x01
+#define DISCRETE_OUTPUT			0x02
 
 //OpenPLC EEPROM address
 #define PROGRAMMED			0
-#define PROGRAMMED_VALUE	128
-#define MAC					1
-#define IP					7
+#define PROGRAMMED_VALUE		128
+#define MAC				1
+#define IP				7
 #define GATEWAY				11
 #define SUBNET				15
 
 /*****************************************************
- *				  INPUT DEFINITIONS                  *
+ *				  INPUT DEFINITIONS  *
  *                                                   *
  * Here we are associating each OpenPLC input name   *
  * with a number, so that when  we call 'X1_3' in a  *
@@ -129,7 +129,7 @@
 #define X8_7		63
 
 /*****************************************************
- *				 OUTPUT DEFINITIONS                  *
+ *				 OUTPUT DEFINITIONS  *
  *                                                   *
  * Here we are associating each OpenPLC output name  *
  * with a number, so that when  we call 'Y1_3' in a  *
