@@ -19,7 +19,7 @@
  by Tom Igoe
  Updated 8 March 2014
  by Scott Fitzgerald
- 
+
  http://arduino.cc/en/Reference/EsploraReadJoystickSwitch
 
  This example is in the public domain.
@@ -52,7 +52,7 @@ void loop()
   if (button == 0) {                           // if the joystick button is pressed
     Mouse.press();                             // send a mouse click
   } else {
-    Mouse.release();                           // if it's not pressed, release the mouse button 
+    Mouse.release();                           // if it's not pressed, release the mouse button
   }
 
   delay(10);                                  // a short delay before moving again

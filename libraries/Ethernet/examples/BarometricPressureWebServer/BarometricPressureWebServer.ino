@@ -219,5 +219,5 @@ unsigned int readRegister(byte registerName, int numBytes) {
   // take the chip select high to de-select:
   digitalWrite(chipSelectPin, HIGH);
   // return the result:
-  return(result);
+  return (result);
 }

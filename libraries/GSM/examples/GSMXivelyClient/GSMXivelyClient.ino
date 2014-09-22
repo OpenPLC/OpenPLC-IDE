@@ -1,10 +1,10 @@
 /*
  GSM Xively client
- 
+
  This sketch connects an analog sensor to Xively (http://www.xively.com)
  using a Telefonica GSM/GPRS shield.
 
- This example has been updated to use version 2.0 of the Xively.com API. 
+ This example has been updated to use version 2.0 of the Xively.com API.
  To make it work, create a feed with a datastream, and give it the ID
  sensor1. Or change the code below to match your feed.
 
@@ -18,9 +18,9 @@
  and adapted for GSM shield by David Del Peral
 
  This code is in the public domain.
- 
+
  http://arduino.cc/en/Tutorial/GSMExamplesXivelyClient
- 
+
  */
 
 // libraries
@@ -51,7 +51,7 @@ char server[] = "api.xively.com";      // name address for xively API
 
 unsigned long lastConnectionTime = 0;         // last time you connected to the server, in milliseconds
 boolean lastConnected = false;                  // state of the connection last time through the main loop
-const unsigned long postingInterval = 10*1000;  //delay between updates to Xively.com
+const unsigned long postingInterval = 10 * 1000; //delay between updates to Xively.com
 
 void setup()
 {

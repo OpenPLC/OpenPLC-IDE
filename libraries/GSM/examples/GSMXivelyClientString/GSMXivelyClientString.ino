@@ -1,10 +1,10 @@
 /*
  Xively client with Strings
- 
+
  This sketch connects two analog sensors to Xively (http://www.xively.com)
  through a Telefonica GSM/GPRS shield.
- 
- This example has been updated to use version 2.0 of the Xively.com API. 
+
+ This example has been updated to use version 2.0 of the Xively.com API.
  To make it work, create a feed with two datastreams, and give them the IDs
  sensor1 and sensor2. Or change the code below to match your feed.
 
@@ -52,7 +52,7 @@ char server[] = "api.xively.com";       // name address for Xively API
 
 unsigned long lastConnectionTime = 0;           // last time you connected to the server, in milliseconds
 boolean lastConnected = false;                  // state of the connection last time through the main loop
-const unsigned long postingInterval = 10*1000;  // delay between updates to Xively.com
+const unsigned long postingInterval = 10 * 1000; // delay between updates to Xively.com
 
 void setup()
 {
@@ -91,7 +91,7 @@ void loop()
   String dataString = "sensor1,";
   dataString += sensorReading;
 
-  // you can append multiple readings to this String to 
+  // you can append multiple readings to this String to
   // send the xively feed multiple values
   int otherSensorReading = analogRead(A1);
   dataString += "\nsensor2,";

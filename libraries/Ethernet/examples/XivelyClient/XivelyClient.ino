@@ -1,12 +1,12 @@
 /*
   Xively sensor client
- 
+
  This sketch connects an analog sensor to Xively (http://www.xively.com)
  using a Wiznet Ethernet shield. You can use the Arduino Ethernet shield, or
  the Adafruit Ethernet shield, either one will work, as long as it's got
  a Wiznet Ethernet module on board.
- 
- This example has been updated to use version 2.0 of the Xively.com API. 
+
+ This example has been updated to use version 2.0 of the Xively.com API.
  To make it work, create a feed with a datastream, and give it the ID
  sensor1. Or change the code below to match your feed.
 
@@ -18,7 +18,7 @@
  created 15 March 2010
  modified 9 Apr 2012
  by Tom Igoe with input from Usman Haque and Joe Saavedra
- 
+
 http://arduino.cc/en/Tutorial/XivelyClient
  This code is in the public domain.
 
@@ -46,12 +46,12 @@ EthernetClient client;
 
 // if you don't want to use DNS (and reduce your sketch size)
 // use the numeric IP instead of the name for the server:
-IPAddress server(216,52,233,122);      // numeric IP for api.xively.com
+IPAddress server(216, 52, 233, 122);   // numeric IP for api.xively.com
 //char server[] = "api.xively.com";   // name address for xively API
 
 unsigned long lastConnectionTime = 0;          // last time you connected to the server, in milliseconds
 boolean lastConnected = false;                 // state of the connection last time through the main loop
-const unsigned long postingInterval = 10*1000; //delay between updates to Xively.com
+const unsigned long postingInterval = 10 * 1000; //delay between updates to Xively.com
 
 void setup() {
   // Open serial communications and wait for port to open:

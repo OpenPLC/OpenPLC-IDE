@@ -1,13 +1,13 @@
 /*
   Wifi Xively sensor client
- 
+
  This sketch connects an analog sensor to Xively (http://www.xively.com)
  using an Arduino Wifi shield.
 
  This example is written for a network using WPA encryption. For
  WEP or WPA, change the Wifi.begin() call accordingly.
- 
- This example has been updated to use version 2.0 of the Xively API. 
+
+ This example has been updated to use version 2.0 of the Xively API.
  To make it work, create a feed with a datastream, and give it the ID
  sensor1. Or change the code below to match your feed.
 
@@ -40,12 +40,12 @@ int status = WL_IDLE_STATUS;
 WiFiClient client;
 // if you don't want to use DNS (and reduce your sketch size)
 // use the numeric IP instead of the name for the server:
-IPAddress server(216,52,233,121);      // numeric IP for api.xively.com
+IPAddress server(216, 52, 233, 121);   // numeric IP for api.xively.com
 //char server[] = "api.xively.com";   // name address for xively API
 
 unsigned long lastConnectionTime = 0;          // last time you connected to the server, in milliseconds
 boolean lastConnected = false;                 // state of the connection last time through the main loop
-const unsigned long postingInterval = 10*1000; //delay between updates to xively.com
+const unsigned long postingInterval = 10 * 1000; //delay between updates to xively.com
 
 void setup() {
   //Initialize serial and wait for port to open:

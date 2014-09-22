@@ -8,8 +8,8 @@
 
   Check out the latest Arduino & Temboo examples and support docs at http://www.temboo.com/arduino
 
-  A Temboo account and application key are necessary to run all Temboo examples. 
-  If you don't already have one, you can register for a free Temboo account at 
+  A Temboo account and application key are necessary to run all Temboo examples.
+  If you don't already have one, you can register for a free Temboo account at
   http://www.temboo.com
 
   To use this example, you'll need a MySQL instance. These instructions
@@ -20,10 +20,10 @@
   To configure an RDS MySQL instance for Temboo connectivity:
 
   1. If you don't already have one, create an Amazon AWS account and
-  a new MySQL RDS instance. The instructions at 
+  a new MySQL RDS instance. The instructions at
   http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.html
-  will guide you through this process. Be sure to select the "US East (N.  Virginia)" 
-  region in the dropdown menu in the upper right side of the RDS Management Console 
+  will guide you through this process. Be sure to select the "US East (N.  Virginia)"
+  region in the dropdown menu in the upper right side of the RDS Management Console
   before creating the new instance.
 
   2. Configure your RDS instance by adding a security rule to allow access
@@ -32,7 +32,7 @@
   If you're not familiar with the RDS command line tools, the following steps
   will guide you through this process using a Temboo Choreo:
 
-  -Obtain your AWS Access Key ID and Secret Access Key from the "Security Credentials" 
+  -Obtain your AWS Access Key ID and Secret Access Key from the "Security Credentials"
   pane of the AWS management console. If you haven't yet created an Access Key, you
   will be able to do so from this interface.
 
@@ -43,29 +43,29 @@
   -Turn on Run Mode, and enter the following inputs:
 
     AWSAccessKeyId:          your AWS access key
-    AWSSecretKeyId:          your AWS secret key 
+    AWSSecretKeyId:          your AWS secret key
     CIDRIP:                  (leave empty)
     DBSecurityGroupName:     your RDS DBSecurityGroup name
     EC2SecurityGroupName:    Temboo Access
     EC2SecurityGroupOwnerId: 114370834540
 
-  -Click the "Try it Out" button. If all went well, you should see an XML document 
-  in the "Output" section of the Choreo description page listing the access permissions 
+  -Click the "Try it Out" button. If all went well, you should see an XML document
+  in the "Output" section of the Choreo description page listing the access permissions
   in your RDS security group. Temboo should now have access to your RDS database.
-  
+
   3. To run the SendDataToMySQL sketch, you'll need the following information
-  about your database. These values can be found on the RDS Management Console: 
+  about your database. These values can be found on the RDS Management Console:
 
   -The address of the DB server (eg, somename.abc3xy6ijklmn.us-east-1.rds.amazonaws.com)
   -The database name
   -A username for a user with read, write, and create access to the DB
   -The password for that user
 
-  Substitute these values into the DATABASE_SERVER, DATABASE_NAME, DATABASE_USERNAME, 
+  Substitute these values into the DATABASE_SERVER, DATABASE_NAME, DATABASE_USERNAME,
   and DATABASE_PASSWORD constants in the sketch.
 
-  When you run the sketch, it will attempt to create a new table named "readings" in the 
-  database if it doesn't already exist. The table contains two columns: an unsigned INT 
+  When you run the sketch, it will attempt to create a new table named "readings" in the
+  database if it doesn't already exist. The table contains two columns: an unsigned INT
   column named "cpu_time" and an INT column named "sensor_value".
 
   This example assumes basic familiarity with Arduino sketches, and that your Yún is connected
@@ -80,7 +80,7 @@
 #include <Bridge.h>
 #include <Temboo.h>
 #include "TembooAccount.h" // contains Temboo account information, 
-                           // as described in the footer comment below
+// as described in the footer comment below
 
 
 /*** SUBSTITUTE YOUR VALUES BELOW: ***/
@@ -98,22 +98,22 @@ const String DATABASE_TABLE_NAME = "readings";
 
 
 // how often to run the Choreo (in milliseconds)
-const unsigned long RUN_INTERVAL_MILLIS = 60000; 
+const unsigned long RUN_INTERVAL_MILLIS = 60000;
 
 // the last time we ran the Choreos (initialized to 60 seconds ago,
 // so the Choreos are run immediately when we start up)
-unsigned long lastRun = (unsigned long)-60000;
+unsigned long lastRun = (unsigned long) - 60000;
 
 // a flag to indicate if we were able to create the table
 // (or that it already existed)
 bool haveTable = false;
 
 void setup() {
-  
+
   // for debugging, wait until a serial console is connected
   Serial.begin(9600);
   delay(4000);
-  while(!Serial);
+  while (!Serial);
 
   Serial.print("Initializing the bridge...");
   Bridge.begin();
@@ -140,7 +140,7 @@ void loop()
     lastRun = now;
 
     // do the database write/read only if we have the table.
-    if (haveTable) { 
+    if (haveTable) {
 
       // get the value we want to add to our table
       int sensorValue = getSensorValue();
@@ -156,10 +156,10 @@ void loop()
     } else {
       Serial.println("Table creation failed, not appending row.");
     }
- }
+  }
 }
 
-/* 
+/*
  * createTable is a function that executes a SQL statement to
  * create a table with the correct columns needed for this sketch.
  */
@@ -178,7 +178,7 @@ unsigned int createTable() {
   // Send the SQL to Temboo so it can forward it to your database.
   unsigned int result = executeSQLCommand(sql, false);
 
-  // If there was an error, the executeSQLCommand function will have 
+  // If there was an error, the executeSQLCommand function will have
   // printed it to the Serial console.  Otherwise, print OK.
   if (result == 0) {
     Serial.println("OK");
@@ -187,7 +187,7 @@ unsigned int createTable() {
   return result;
 }
 
-/* 
+/*
  * appendRow is a function that executes a SQL statement to
  * insert a new row of data into the database.
  * cpuTime is the value to be inserted into the cpu_time column
@@ -202,7 +202,7 @@ unsigned int appendRow(unsigned long cpuTime, int value) {
   // Send the SQL to Temboo so it can forward it to your database.
   unsigned int result = executeSQLCommand(sql, false);
 
-  // If there was an error, the executeSQLCommand function will have 
+  // If there was an error, the executeSQLCommand function will have
   // printed it to the Serial console.  Otherwise, print OK.
   if (result == 0) {
     Serial.println("OK");
@@ -223,7 +223,7 @@ unsigned int retrieveRow(unsigned long cpuTime) {
   String sql = "SELECT * FROM " + DATABASE_TABLE_NAME + " WHERE cpu_time = '" + cpuTime + "';";
 
   // Send the SQL to Temboo so it can forward it to your database.
-  // In this case, we want to print the raw output we get from 
+  // In this case, we want to print the raw output we get from
   // Temboo.  This is just to demonstrate that the data really did
   // get written to the database.
   unsigned int result = executeSQLCommand(sql, true);
@@ -258,7 +258,7 @@ unsigned int executeSQLCommand(String sql, bool showOutput) {
   // and the database name within that RDS instance
   choreo.addInput("Server", DATABASE_SERVER);
   choreo.addInput("DatabaseName", DATABASE_NAME);
-  
+
   // add inputs for the MySQL user credentials
   choreo.addInput("Username", DATABASE_USERNAME);
   choreo.addInput("Password", DATABASE_PASSWORD);
@@ -267,7 +267,7 @@ unsigned int executeSQLCommand(String sql, bool showOutput) {
   choreo.addInput("SQL", sql);
 
   // run the Choreo and wait for the results
-  // The return code (returnCode) will indicate success or failure 
+  // The return code (returnCode) will indicate success or failure
   unsigned int returnCode = choreo.run();
 
   // return code of zero (0) means success
@@ -281,7 +281,7 @@ unsigned int executeSQLCommand(String sql, bool showOutput) {
       }
     }
   } else {
-    // return code of anything other than zero means failure  
+    // return code of anything other than zero means failure
     // read and display any error messages
     while (choreo.available()) {
       char c = choreo.read();
@@ -313,16 +313,16 @@ int getSensorValue() {
   by inserting your own Temboo account name and app key information. The contents of the file should
   look like:
 
-  #define TEMBOO_ACCOUNT "myTembooAccountName"  // your Temboo account name 
+  #define TEMBOO_ACCOUNT "myTembooAccountName"  // your Temboo account name
   #define TEMBOO_APP_KEY_NAME "myFirstApp"  // your Temboo app key name
   #define TEMBOO_APP_KEY  "xxx-xxx-xxx-xx-xxx"  // your Temboo app key
 
-  You can find your Temboo App Key information on the Temboo website, 
+  You can find your Temboo App Key information on the Temboo website,
   under My Account > Application Keys
 
   The same TembooAccount.h file settings can be used for all Temboo SDK sketches.
 
-  Keeping your account information in a separate file means you can share the main .ino file without worrying 
+  Keeping your account information in a separate file means you can share the main .ino file without worrying
   that you forgot to delete your credentials.
 */
 
