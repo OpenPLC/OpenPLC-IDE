@@ -1,0 +1,4 @@
+
+name=Open PLC Cards (w/ AVR Chips)
+version=1.5.8
+

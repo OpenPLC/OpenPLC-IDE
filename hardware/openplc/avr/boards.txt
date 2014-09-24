@@ -25,11 +25,13 @@ opinput.bootloader.unlock_bits=0x3F
 opinput.bootloader.lock_bits=0x0F
 opinput.bootloader.file=optiboot/optiboot_atmega328.hex
 
+opinput.openplc.firmware=inputBoard/inputBoard.cpp.hex
+
 opinput.build.mcu=atmega328p
 opinput.build.f_cpu=16000000L
 opinput.build.board=AVR_UNO
 opinput.build.core=arduino:arduino
-opinput.build.variant=standard
+opinput.build.variant=iocard
 
 ##############################################################
 
@@ -55,11 +57,13 @@ opoutput.bootloader.unlock_bits=0x3F
 opoutput.bootloader.lock_bits=0x0F
 opoutput.bootloader.file=optiboot/optiboot_atmega328.hex
 
+opinput.openplc.firmware=outputBoard/outputBoard.cpp.hex
+
 opoutput.build.mcu=atmega328p
 opoutput.build.f_cpu=16000000L
 opoutput.build.board=AVR_UNO
 opoutput.build.core=arduino:arduino
-opoutput.build.variant=standard
+opoutput.build.variant=iocard
 
 ##############################################################
 
@@ -81,13 +85,13 @@ opmain.bootloader.lock_bits=0x0F
 
 opmain.build.f_cpu=16000000L
 opmain.build.core=arduino:arduino
-opmain.build.variant=mega
+opmain.build.variant=cpucard
 # default board  may be overridden by the cpu menu
 opmain.build.board=AVR_MEGA2560
 
 ## Arduino Mega w/ ATmega2560
 ## -------------------------
-opmain.menu.cpu.atmega2560=OpenPLC Main Card (ATMega 2560)
+opmain.menu.cpu.atmega2560=ATMega 2560
 
 opmain.menu.cpu.atmega2560.upload.protocol=wiring
 opmain.menu.cpu.atmega2560.upload.maximum_size=253952
