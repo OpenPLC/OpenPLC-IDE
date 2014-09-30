@@ -29,7 +29,7 @@ void PLCInit(void); //initialize plc functions
 void OPLC_send(byte dataSize, byte function, byte address, byte * data); //send a message over the OPLC Protocol
 boolean OPLC_receive(byte * dataSize, byte * function, byte * data); //receive a message over the OPLC Protocol
 
-//PC_Comm.h 
+//PC_Comm.h
 void showInfo(void); //show information about the PLC over Serial Port when requested
 void newValue(int startAddress); //change the value of the IP Addres, Subnet Mask or Gateway
 void newMAC(void); //change the MAC address
