@@ -47,20 +47,20 @@ enum MB_FC {
 //definition of the Mudbus class
 class Mudbus
 {
-  public:
-    Mudbus(); //constructor
-    void Run();  //this method must run in a loop
-    int  R[MB_N_R]; //array holding 16-bit registers values
-    bool C[MB_N_C]; //array holding Coils state
-    bool I[MB_N_I]; //array holding Inputs state
-    //Controls for debug
-    bool Active;
-    unsigned long PreviousActivityTime;
-    int Runs, Reads, Writes;
-  private:
-    uint8_t ByteArray[260]; //message received / sent
-    MB_FC FC; //Function code received / sent
-    void SetFC(int fc); //method to identify the function code received
+public:
+  Mudbus(); //constructor
+  void Run();  //this method must run in a loop
+  int  R[MB_N_R]; //array holding 16-bit registers values
+  bool C[MB_N_C]; //array holding Coils state 
+  bool I[MB_N_I]; //array holding Inputs state
+  //Controls for debug
+  bool Active;    
+  unsigned long PreviousActivityTime;
+  int Runs, Reads, Writes;
+private: 
+  uint8_t ByteArray[260]; //message received / sent
+  MB_FC FC; //Function code received / sent
+  void SetFC(int fc); //method to identify the function code received
 };
 
 #endif

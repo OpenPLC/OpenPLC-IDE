@@ -13,8 +13,8 @@ boolean toggle_500ms = false;
 boolean toggle_50ms = false;
 int system_timer = 0;
 char PLCstatus; //status of the actual state of the OpenPLC
-int errorCount = 0;
-long lastError = 0;
+int errorCount=0;
+long lastError=0;
 
 Mudbus modbus; //create the modbus object
 
@@ -31,23 +31,23 @@ Mudbus modbus; //create the modbus object
 * the outputVector are sent to the output cards. *
 **************************************************
 */
-boolean inputVector[64] = {
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0
-};
-boolean outputVector[64] = {
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0
-};
+boolean inputVector[64] = {		
+							0,0,0,0,0,0,0,0,
+							0,0,0,0,0,0,0,0,
+							0,0,0,0,0,0,0,0,
+							0,0,0,0,0,0,0,0,
+							0,0,0,0,0,0,0,0,
+							0,0,0,0,0,0,0,0,
+							0,0,0,0,0,0,0,0,
+							0,0,0,0,0,0,0,0
+					  };
+boolean outputVector[64] = {	
+							0,0,0,0,0,0,0,0,
+							0,0,0,0,0,0,0,0,
+							0,0,0,0,0,0,0,0,
+							0,0,0,0,0,0,0,0,
+							0,0,0,0,0,0,0,0,
+							0,0,0,0,0,0,0,0,
+							0,0,0,0,0,0,0,0,
+							0,0,0,0,0,0,0,0
+						};

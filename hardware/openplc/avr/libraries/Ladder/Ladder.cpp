@@ -21,7 +21,7 @@
    the PWM duty cycle on the micro. That way you can add support for
    peripherals that LDmicro doesn't know about. */
 #ifdef EXTERN_EVERYTHING
-#define STATIC
+#define STATIC 
 #else
 #define STATIC static
 #endif
@@ -372,1313 +372,1313 @@ STATIC BOOL I_b_parThis_0012 = 0;
    generated this code. */
 void PlcCycle(void)
 {
-  Write_I_b_mcr(1);
-
-  /* start rung 3 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (Read_U_b_X1_1()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_RTRAVA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (!Read_U_b_RPL()) {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_RDO(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 5 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_0000(0);
-  Write_I_b_parThis_0000(Read_I_b_rung_top());
-  if (!Read_U_b_RDO()) {
-    Write_I_b_parThis_0000(0);
-  }
-
-  if (Read_I_b_parThis_0000()) {
-    Write_I_b_parOut_0000(1);
-  }
-  Write_I_b_parThis_0000(Read_I_b_rung_top());
-  if (!Read_U_b_RADE()) {
-    Write_I_b_parThis_0000(0);
-  }
-
-  if (Read_I_b_parThis_0000()) {
-    Write_I_b_parOut_0000(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_0000());
-  /* ] finish parallel */
-  Write_U_b_Y1_1(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 7 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_0001(0);
-  Write_I_b_parThis_0001(Read_I_b_rung_top());
-  if (!Read_U_b_XSF03()) {
-    Write_I_b_parThis_0001(0);
-  }
-
-  if (Read_I_b_parThis_0001()) {
-    Write_I_b_parOut_0001(1);
-  }
-  Write_I_b_parThis_0001(Read_I_b_rung_top());
-  /* start series [ */
-  if (!Read_U_b_X1_7()) {
-    Write_I_b_parThis_0001(0);
-  }
-
-  Write_I_b_scratch(Read_I_b_parThis_0001());
-  if (!Read_I_b_parThis_0001()) {
-    if (Read_I_b_oneShot_0000()) {
-      Write_I_b_parThis_0001(1);
+    Write_I_b_mcr(1);
+    
+    /* start rung 3 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(Read_U_b_X1_1()) {
+        Write_I_b_rung_top(0);
     }
-  } else {
-    Write_I_b_parThis_0001(0);
-  }
-  Write_I_b_oneShot_0000(Read_I_b_scratch());
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0001()) {
-    Write_I_b_parOut_0001(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_0001());
-  /* ] finish parallel */
-  if (Read_I_b_rung_top()) {
-    Write_U_b_RPL(1);
-  }
-
-  /* ] finish series */
-
-  /* start rung 9 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_0002(0);
-  Write_I_b_parThis_0002(Read_I_b_rung_top());
-  /* start series [ */
-  if (!Read_U_b_X1_7()) {
-    Write_I_b_parThis_0002(0);
-  }
-
-  Write_I_b_scratch(Read_I_b_parThis_0002());
-  if (Read_I_b_oneShot_0001()) {
-    Write_I_b_parThis_0002(0);
-  }
-  Write_I_b_oneShot_0001(Read_I_b_scratch());
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0002()) {
-    Write_I_b_parOut_0002(1);
-  }
-  Write_I_b_parThis_0002(Read_I_b_rung_top());
-  /* start series [ */
-
-
-  if (!Read_U_b_X1_1()) {
-    Write_I_b_parThis_0002(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0002()) {
-    Write_I_b_parOut_0002(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_0002());
-  /* ] finish parallel */
-  if (Read_I_b_rung_top()) {
-    Write_U_b_RPL(0);
-  }
-
-  /* ] finish series */
-
-  /* start rung 11 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_7()) {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_Y1_2(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 13 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_0003(0);
-  Write_I_b_parThis_0003(Read_I_b_rung_top());
-  if (!Read_U_b_X1_7()) {
-    Write_I_b_parThis_0003(0);
-  }
-
-  if (Read_I_b_parThis_0003()) {
-    Write_I_b_parOut_0003(1);
-  }
-  Write_I_b_parThis_0003(Read_I_b_rung_top());
-  if (Read_U_b_X1_6()) {
-    Write_I_b_parThis_0003(0);
-  }
-
-  if (Read_I_b_parThis_0003()) {
-    Write_I_b_parOut_0003(1);
-  }
-  Write_I_b_parThis_0003(Read_I_b_rung_top());
-  if (Read_U_b_X1_0()) {
-    Write_I_b_parThis_0003(0);
-  }
-
-  if (Read_I_b_parThis_0003()) {
-    Write_I_b_parOut_0003(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_0003());
-  /* ] finish parallel */
-  Write_U_b_RTRAVA(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 15 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_1()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_I_b_rung_top()) {
-    U_i_ANDAR = 1;
-  }
-
-  /* ] finish series */
-
-  /* start rung 16 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_2()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_I_b_rung_top()) {
-    U_i_ANDAR = 2;
-  }
-
-  /* ] finish series */
-
-  /* start rung 17 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_3()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_I_b_rung_top()) {
-    U_i_ANDAR = 3;
-  }
-
-  /* ] finish series */
-
-  /* start rung 18 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_4()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_I_b_rung_top()) {
-    U_i_ANDAR = 4;
-  }
-
-  /* ] finish series */
-
-  /* start rung 19 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_5()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_I_b_rung_top()) {
-    U_i_ANDAR = 5;
-  }
-
-  /* ] finish series */
-
-  /* start rung 22 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_0004(0);
-  Write_I_b_parThis_0004(Read_I_b_rung_top());
-  if (!Read_U_b_X2_1()) {
-    Write_I_b_parThis_0004(0);
-  }
-
-  if (Read_I_b_parThis_0004()) {
-    Write_I_b_parOut_0004(1);
-  }
-  Write_I_b_parThis_0004(Read_I_b_rung_top());
-  if (!Read_U_b_Y3_1()) {
-    Write_I_b_parThis_0004(0);
-  }
-
-  if (Read_I_b_parThis_0004()) {
-    Write_I_b_parOut_0004(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_0004());
-  /* ] finish parallel */
-  Write_I_b_scratch(Read_I_b_rung_top());
-  if (Read_I_b_oneShot_0002()) {
-    Write_I_b_rung_top(0);
-  }
-  Write_I_b_oneShot_0002(Read_I_b_scratch());
-
-  if (Read_I_b_rung_top()) {
-    U_i_PED1 = 1;
-  }
-
-  /* ] finish series */
-
-  /* start rung 23 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_0005(0);
-  Write_I_b_parThis_0005(Read_I_b_rung_top());
-  if (!Read_U_b_X2_2()) {
-    Write_I_b_parThis_0005(0);
-  }
-
-  if (Read_I_b_parThis_0005()) {
-    Write_I_b_parOut_0005(1);
-  }
-  Write_I_b_parThis_0005(Read_I_b_rung_top());
-  if (!Read_U_b_Y3_2()) {
-    Write_I_b_parThis_0005(0);
-  }
-
-  if (Read_I_b_parThis_0005()) {
-    Write_I_b_parOut_0005(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_0005());
-  /* ] finish parallel */
-  Write_I_b_scratch(Read_I_b_rung_top());
-  if (Read_I_b_oneShot_0003()) {
-    Write_I_b_rung_top(0);
-  }
-  Write_I_b_oneShot_0003(Read_I_b_scratch());
-
-  if (Read_I_b_rung_top()) {
-    U_i_PED2 = 2;
-  }
-
-  /* ] finish series */
-
-  /* start rung 24 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_0006(0);
-  Write_I_b_parThis_0006(Read_I_b_rung_top());
-  if (!Read_U_b_X2_3()) {
-    Write_I_b_parThis_0006(0);
-  }
-
-  if (Read_I_b_parThis_0006()) {
-    Write_I_b_parOut_0006(1);
-  }
-  Write_I_b_parThis_0006(Read_I_b_rung_top());
-  if (!Read_U_b_Y3_3()) {
-    Write_I_b_parThis_0006(0);
-  }
-
-  if (Read_I_b_parThis_0006()) {
-    Write_I_b_parOut_0006(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_0006());
-  /* ] finish parallel */
-  Write_I_b_scratch(Read_I_b_rung_top());
-  if (Read_I_b_oneShot_0004()) {
-    Write_I_b_rung_top(0);
-  }
-  Write_I_b_oneShot_0004(Read_I_b_scratch());
-
-  if (Read_I_b_rung_top()) {
-    U_i_PED3 = 3;
-  }
-
-  /* ] finish series */
-
-  /* start rung 25 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_0007(0);
-  Write_I_b_parThis_0007(Read_I_b_rung_top());
-  if (!Read_U_b_X2_4()) {
-    Write_I_b_parThis_0007(0);
-  }
-
-  if (Read_I_b_parThis_0007()) {
-    Write_I_b_parOut_0007(1);
-  }
-  Write_I_b_parThis_0007(Read_I_b_rung_top());
-  if (!Read_U_b_Y3_4()) {
-    Write_I_b_parThis_0007(0);
-  }
-
-  if (Read_I_b_parThis_0007()) {
-    Write_I_b_parOut_0007(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_0007());
-  /* ] finish parallel */
-  Write_I_b_scratch(Read_I_b_rung_top());
-  if (Read_I_b_oneShot_0005()) {
-    Write_I_b_rung_top(0);
-  }
-  Write_I_b_oneShot_0005(Read_I_b_scratch());
-
-  if (Read_I_b_rung_top()) {
-    U_i_PED4 = 4;
-  }
-
-  /* ] finish series */
-
-  /* start rung 26 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_0008(0);
-  Write_I_b_parThis_0008(Read_I_b_rung_top());
-  if (!Read_U_b_X2_5()) {
-    Write_I_b_parThis_0008(0);
-  }
-
-  if (Read_I_b_parThis_0008()) {
-    Write_I_b_parOut_0008(1);
-  }
-  Write_I_b_parThis_0008(Read_I_b_rung_top());
-  if (!Read_U_b_Y3_5()) {
-    Write_I_b_parThis_0008(0);
-  }
-
-  if (Read_I_b_parThis_0008()) {
-    Write_I_b_parOut_0008(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_0008());
-  /* ] finish parallel */
-  Write_I_b_scratch(Read_I_b_rung_top());
-  if (Read_I_b_oneShot_0006()) {
-    Write_I_b_rung_top(0);
-  }
-  Write_I_b_oneShot_0006(Read_I_b_scratch());
-
-  if (Read_I_b_rung_top()) {
-    U_i_PED5 = 5;
-  }
-
-  /* ] finish series */
-
-  /* start rung 28 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_1()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (!Read_U_b_RDESL_PARADA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_I_b_rung_top()) {
-    U_i_PED1 = 0;
-  }
-
-  /* ] finish series */
-
-  /* start rung 29 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_2()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (!Read_U_b_RDESL_PARADA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_I_b_rung_top()) {
-    U_i_PED2 = 0;
-  }
-
-  /* ] finish series */
-
-  /* start rung 30 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_3()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (!Read_U_b_RDESL_PARADA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_I_b_rung_top()) {
-    U_i_PED3 = 0;
-  }
-
-  /* ] finish series */
-
-  /* start rung 31 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_4()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (!Read_U_b_RDESL_PARADA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_I_b_rung_top()) {
-    U_i_PED4 = 0;
-  }
-
-  /* ] finish series */
-
-  /* start rung 32 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_5()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (!Read_U_b_RDESL_PARADA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_I_b_rung_top()) {
-    U_i_PED5 = 0;
-  }
-
-  /* ] finish series */
-
-  /* start rung 34 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (Read_U_b_X1_1()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_X1_2()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_X1_3()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_X1_4()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_X1_5()) {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_Rmove(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 36 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_0009(0);
-  Write_I_b_parThis_0009(Read_I_b_rung_top());
-  /* start series [ */
-  if (U_i_PED1 == U_i_ANDAR) {
-  } else {
-    Write_I_b_parThis_0009(0);
-  }
-
-  if (Read_U_b_Rmove()) {
-    Write_I_b_parThis_0009(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0009()) {
-    Write_I_b_parOut_0009(1);
-  }
-  Write_I_b_parThis_0009(Read_I_b_rung_top());
-  /* start series [ */
-  if (U_i_PED2 == U_i_ANDAR) {
-  } else {
-    Write_I_b_parThis_0009(0);
-  }
-
-  if (Read_U_b_Rmove()) {
-    Write_I_b_parThis_0009(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0009()) {
-    Write_I_b_parOut_0009(1);
-  }
-  Write_I_b_parThis_0009(Read_I_b_rung_top());
-  /* start series [ */
-  if (U_i_PED3 == U_i_ANDAR) {
-  } else {
-    Write_I_b_parThis_0009(0);
-  }
-
-  if (Read_U_b_Rmove()) {
-    Write_I_b_parThis_0009(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0009()) {
-    Write_I_b_parOut_0009(1);
-  }
-  Write_I_b_parThis_0009(Read_I_b_rung_top());
-  /* start series [ */
-  if (U_i_PED4 == U_i_ANDAR) {
-  } else {
-    Write_I_b_parThis_0009(0);
-  }
-
-  if (Read_U_b_Rmove()) {
-    Write_I_b_parThis_0009(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0009()) {
-    Write_I_b_parOut_0009(1);
-  }
-  Write_I_b_parThis_0009(Read_I_b_rung_top());
-  /* start series [ */
-  if (U_i_PED5 == U_i_ANDAR) {
-  } else {
-    Write_I_b_parThis_0009(0);
-  }
-
-  if (Read_U_b_Rmove()) {
-    Write_I_b_parThis_0009(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0009()) {
-    Write_I_b_parOut_0009(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_0009());
-  /* ] finish parallel */
-  if (!Read_I_b_TPA_antiglitch()) {
-    U_i_TPA = 99;
-  }
-  Write_I_b_TPA_antiglitch(1);
-  if (!Read_I_b_rung_top()) {
-    if (U_i_TPA < 99) {
-      U_i_TPA++;
-      Write_I_b_rung_top(1);
+    
+    if(Read_U_b_RTRAVA()) {
+        Write_I_b_rung_top(0);
     }
-  } else {
-    U_i_TPA = 0;
-  }
-
-  Write_U_b_RDESL_PARADA(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 38 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_1()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (!Read_U_b_RDESL_PARADA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_Y1_3(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 39 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_2()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (!Read_U_b_RDESL_PARADA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_Y1_4(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 40 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_3()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (!Read_U_b_RDESL_PARADA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_Y1_5(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 41 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_4()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (!Read_U_b_RDESL_PARADA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_Y1_6(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 42 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_X1_5()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (!Read_U_b_RDESL_PARADA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_Y1_7(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 44 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_000a(0);
-  Write_I_b_parThis_000a(Read_I_b_rung_top());
-  /* start series [ */
-  I_i_scratch2 = 0;
-  if (U_i_PED1 == I_i_scratch2) {
-  } else {
-    Write_I_b_parThis_000a(0);
-  }
-
-  I_i_scratch2 = 0;
-  if (U_i_PED2 == I_i_scratch2) {
-  } else {
-    Write_I_b_parThis_000a(0);
-  }
-
-  I_i_scratch2 = 0;
-  if (U_i_PED3 == I_i_scratch2) {
-  } else {
-    Write_I_b_parThis_000a(0);
-  }
-
-  I_i_scratch2 = 0;
-  if (U_i_PED4 == I_i_scratch2) {
-  } else {
-    Write_I_b_parThis_000a(0);
-  }
-
-  I_i_scratch2 = 0;
-  if (U_i_PED5 == I_i_scratch2) {
-  } else {
-    Write_I_b_parThis_000a(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_000a()) {
-    Write_I_b_parOut_000a(1);
-  }
-  Write_I_b_parThis_000a(Read_I_b_rung_top());
-  /* start series [ */
-  if (!Read_U_b_RDE()) {
-    Write_I_b_parThis_000a(0);
-  }
-
-  if (!Read_U_b_X1_1()) {
-    Write_I_b_parThis_000a(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_000a()) {
-    Write_I_b_parOut_000a(1);
-  }
-  Write_I_b_parThis_000a(Read_I_b_rung_top());
-  /* start series [ */
-  if (!Read_U_b_RSE()) {
-    Write_I_b_parThis_000a(0);
-  }
-
-  if (!Read_U_b_X1_5()) {
-    Write_I_b_parThis_000a(0);
-  }
-
-
-
-
-
-  /* ] finish series */
-  if (Read_I_b_parThis_000a()) {
-    Write_I_b_parOut_000a(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_000a());
-  /* ] finish parallel */
-  Write_U_b_RFIM_PREF(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 46 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_Y1_1()) {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_Y2_1(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 48 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_Y1_0()) {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_Y2_0(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 50 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (U_i_ANDAR > U_i_PED1) {
-  } else {
-    Write_I_b_rung_top(0);
-  }
-
-  if (U_i_ANDAR > U_i_PED2) {
-  } else {
-    Write_I_b_rung_top(0);
-  }
-
-  if (U_i_ANDAR > U_i_PED3) {
-  } else {
-    Write_I_b_rung_top(0);
-  }
-
-  if (U_i_ANDAR > U_i_PED4) {
-  } else {
-    Write_I_b_rung_top(0);
-  }
-
-  if (U_i_ANDAR > U_i_PED5) {
-  } else {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_RFIM_PREF_S(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 52 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_000b(0);
-  Write_I_b_parThis_000b(Read_I_b_rung_top());
-  if (U_i_PED1 > U_i_ANDAR) {
-  } else {
-    Write_I_b_parThis_000b(0);
-  }
-
-  if (Read_I_b_parThis_000b()) {
-    Write_I_b_parOut_000b(1);
-  }
-  Write_I_b_parThis_000b(Read_I_b_rung_top());
-  I_i_scratch2 = 0;
-  if (U_i_PED1 == I_i_scratch2) {
-  } else {
-    Write_I_b_parThis_000b(0);
-  }
-
-  if (Read_I_b_parThis_000b()) {
-    Write_I_b_parOut_000b(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_000b());
-  /* ] finish parallel */
-  /* start parallel [ */
-  Write_I_b_parOut_000c(0);
-  Write_I_b_parThis_000c(Read_I_b_rung_top());
-  if (U_i_PED2 > U_i_ANDAR) {
-  } else {
-    Write_I_b_parThis_000c(0);
-  }
-
-  if (Read_I_b_parThis_000c()) {
-    Write_I_b_parOut_000c(1);
-  }
-  Write_I_b_parThis_000c(Read_I_b_rung_top());
-  I_i_scratch2 = 0;
-  if (U_i_PED2 == I_i_scratch2) {
-  } else {
-    Write_I_b_parThis_000c(0);
-  }
-
-  if (Read_I_b_parThis_000c()) {
-    Write_I_b_parOut_000c(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_000c());
-  /* ] finish parallel */
-  /* start parallel [ */
-  Write_I_b_parOut_000d(0);
-  Write_I_b_parThis_000d(Read_I_b_rung_top());
-  if (U_i_PED3 > U_i_ANDAR) {
-  } else {
-    Write_I_b_parThis_000d(0);
-  }
-
-  if (Read_I_b_parThis_000d()) {
-    Write_I_b_parOut_000d(1);
-  }
-  Write_I_b_parThis_000d(Read_I_b_rung_top());
-  I_i_scratch2 = 0;
-  if (U_i_PED3 == I_i_scratch2) {
-  } else {
-    Write_I_b_parThis_000d(0);
-  }
-
-  if (Read_I_b_parThis_000d()) {
-    Write_I_b_parOut_000d(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_000d());
-  /* ] finish parallel */
-  /* start parallel [ */
-  Write_I_b_parOut_000e(0);
-  Write_I_b_parThis_000e(Read_I_b_rung_top());
-  if (U_i_PED4 > U_i_ANDAR) {
-  } else {
-    Write_I_b_parThis_000e(0);
-  }
-
-  if (Read_I_b_parThis_000e()) {
-    Write_I_b_parOut_000e(1);
-  }
-  Write_I_b_parThis_000e(Read_I_b_rung_top());
-  I_i_scratch2 = 0;
-  if (U_i_PED4 == I_i_scratch2) {
-  } else {
-    Write_I_b_parThis_000e(0);
-  }
-
-  if (Read_I_b_parThis_000e()) {
-    Write_I_b_parOut_000e(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_000e());
-  /* ] finish parallel */
-  /* start parallel [ */
-  Write_I_b_parOut_000f(0);
-  Write_I_b_parThis_000f(Read_I_b_rung_top());
-  if (U_i_PED5 > U_i_ANDAR) {
-  } else {
-    Write_I_b_parThis_000f(0);
-  }
-
-  if (Read_I_b_parThis_000f()) {
-    Write_I_b_parOut_000f(1);
-  }
-  Write_I_b_parThis_000f(Read_I_b_rung_top());
-  I_i_scratch2 = 0;
-  if (U_i_PED5 == I_i_scratch2) {
-  } else {
-    Write_I_b_parThis_000f(0);
-  }
-
-  if (Read_I_b_parThis_000f()) {
-    Write_I_b_parOut_000f(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_000f());
-  /* ] finish parallel */
-  Write_U_b_RFIM_PREF_D(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 54 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_0010(0);
-  Write_I_b_parThis_0010(Read_I_b_rung_top());
-  /* start series [ */
-  I_i_scratch2 = 0;
-  if (U_i_PED1 == I_i_scratch2) {
-    Write_I_b_parThis_0010(0);
-  }
-
-  if (U_i_ANDAR > U_i_PED1) {
-  } else {
-    Write_I_b_parThis_0010(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0010()) {
-    Write_I_b_parOut_0010(1);
-  }
-  Write_I_b_parThis_0010(Read_I_b_rung_top());
-  /* start series [ */
-  I_i_scratch2 = 0;
-  if (U_i_PED2 == I_i_scratch2) {
-    Write_I_b_parThis_0010(0);
-  }
-
-  if (U_i_ANDAR > U_i_PED2) {
-  } else {
-    Write_I_b_parThis_0010(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0010()) {
-    Write_I_b_parOut_0010(1);
-  }
-  Write_I_b_parThis_0010(Read_I_b_rung_top());
-  /* start series [ */
-  I_i_scratch2 = 0;
-  if (U_i_PED3 == I_i_scratch2) {
-    Write_I_b_parThis_0010(0);
-  }
-
-  if (U_i_ANDAR > U_i_PED3) {
-  } else {
-    Write_I_b_parThis_0010(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0010()) {
-    Write_I_b_parOut_0010(1);
-  }
-  Write_I_b_parThis_0010(Read_I_b_rung_top());
-  /* start series [ */
-  I_i_scratch2 = 0;
-  if (U_i_PED4 == I_i_scratch2) {
-    Write_I_b_parThis_0010(0);
-  }
-
-  if (U_i_ANDAR > U_i_PED4) {
-  } else {
-    Write_I_b_parThis_0010(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0010()) {
-    Write_I_b_parOut_0010(1);
-  }
-  Write_I_b_parThis_0010(Read_I_b_rung_top());
-  /* start series [ */
-  I_i_scratch2 = 0;
-  if (U_i_PED5 == I_i_scratch2) {
-    Write_I_b_parThis_0010(0);
-  }
-
-  if (U_i_ANDAR > U_i_PED5) {
-  } else {
-    Write_I_b_parThis_0010(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0010()) {
-    Write_I_b_parOut_0010(1);
-  }
-  Write_I_b_parThis_0010(Read_I_b_rung_top());
-  if (!Read_U_b_RPREF_DESCER()) {
-    Write_I_b_parThis_0010(0);
-  }
-
-  if (Read_I_b_parThis_0010()) {
-    Write_I_b_parOut_0010(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_0010());
-  /* ] finish parallel */
-  if (Read_U_b_RPREF_SOBE()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_RFIM_PREF_D()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_RFIM_PREF()) {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_RPREF_DESCER(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 56 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_0011(0);
-  Write_I_b_parThis_0011(Read_I_b_rung_top());
-  /* start series [ */
-  I_i_scratch2 = 0;
-  if (U_i_PED1 == I_i_scratch2) {
-    Write_I_b_parThis_0011(0);
-  }
-
-  if (U_i_ANDAR > U_i_PED1) {
-  } else {
-    Write_I_b_parThis_0011(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0011()) {
-    Write_I_b_parOut_0011(1);
-  }
-  Write_I_b_parThis_0011(Read_I_b_rung_top());
-  /* start series [ */
-  I_i_scratch2 = 0;
-  if (U_i_PED2 == I_i_scratch2) {
-    Write_I_b_parThis_0011(0);
-  }
-
-  if (U_i_ANDAR > U_i_PED2) {
-  } else {
-    Write_I_b_parThis_0011(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0011()) {
-    Write_I_b_parOut_0011(1);
-  }
-  Write_I_b_parThis_0011(Read_I_b_rung_top());
-  /* start series [ */
-  I_i_scratch2 = 0;
-  if (U_i_PED3 == I_i_scratch2) {
-    Write_I_b_parThis_0011(0);
-  }
-
-  if (U_i_ANDAR > U_i_PED3) {
-  } else {
-    Write_I_b_parThis_0011(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0011()) {
-    Write_I_b_parOut_0011(1);
-  }
-  Write_I_b_parThis_0011(Read_I_b_rung_top());
-  /* start series [ */
-  I_i_scratch2 = 0;
-  if (U_i_PED4 == I_i_scratch2) {
-    Write_I_b_parThis_0011(0);
-  }
-
-  if (U_i_ANDAR > U_i_PED4) {
-  } else {
-    Write_I_b_parThis_0011(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0011()) {
-    Write_I_b_parOut_0011(1);
-  }
-  Write_I_b_parThis_0011(Read_I_b_rung_top());
-  /* start series [ */
-  I_i_scratch2 = 0;
-  if (U_i_PED5 == I_i_scratch2) {
-    Write_I_b_parThis_0011(0);
-  }
-
-  if (U_i_ANDAR > U_i_PED5) {
-  } else {
-    Write_I_b_parThis_0011(0);
-  }
-
-  /* ] finish series */
-  if (Read_I_b_parThis_0011()) {
-    Write_I_b_parOut_0011(1);
-  }
-  Write_I_b_parThis_0011(Read_I_b_rung_top());
-  if (!Read_U_b_RPREF_DESCER()) {
-    Write_I_b_parThis_0011(0);
-  }
-
-  if (Read_I_b_parThis_0011()) {
-    Write_I_b_parOut_0011(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_0011());
-  /* ] finish parallel */
-  if (Read_U_b_RPREF_SOBE()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_RTRAVA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_RDESL_PARADA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_RFIM_PREF()) {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_RADE(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 58 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  /* start parallel [ */
-  Write_I_b_parOut_0012(0);
-  Write_I_b_parThis_0012(Read_I_b_rung_top());
-  if (U_i_PED2 > U_i_ANDAR) {
-  } else {
-    Write_I_b_parThis_0012(0);
-  }
-
-  if (Read_I_b_parThis_0012()) {
-    Write_I_b_parOut_0012(1);
-  }
-  Write_I_b_parThis_0012(Read_I_b_rung_top());
-  if (U_i_PED3 > U_i_ANDAR) {
-  } else {
-    Write_I_b_parThis_0012(0);
-  }
-
-  if (Read_I_b_parThis_0012()) {
-    Write_I_b_parOut_0012(1);
-  }
-  Write_I_b_parThis_0012(Read_I_b_rung_top());
-  if (U_i_PED4 > U_i_ANDAR) {
-  } else {
-    Write_I_b_parThis_0012(0);
-  }
-
-  if (Read_I_b_parThis_0012()) {
-    Write_I_b_parOut_0012(1);
-  }
-  Write_I_b_parThis_0012(Read_I_b_rung_top());
-  if (U_i_PED5 > U_i_ANDAR) {
-  } else {
-    Write_I_b_parThis_0012(0);
-  }
-
-  if (Read_I_b_parThis_0012()) {
-    Write_I_b_parOut_0012(1);
-  }
-  Write_I_b_parThis_0012(Read_I_b_rung_top());
-  if (!Read_U_b_RPREF_SOBE()) {
-    Write_I_b_parThis_0012(0);
-  }
-
-  if (Read_I_b_parThis_0012()) {
-    Write_I_b_parOut_0012(1);
-  }
-  Write_I_b_rung_top(Read_I_b_parOut_0012());
-  /* ] finish parallel */
-  if (Read_U_b_RPREF_DESCER()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_RFIM_PREF_S()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_RFIM_PREF()) {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_RPREF_SOBE(Read_I_b_rung_top());
-
-  /* ] finish series */
-
-  /* start rung 60 */
-  Write_I_b_rung_top(Read_I_b_mcr());
-
-  /* start series [ */
-  if (!Read_U_b_RPREF_SOBE()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_RTRAVA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_RDESL_PARADA()) {
-    Write_I_b_rung_top(0);
-  }
-
-  if (Read_U_b_Y1_1()) {
-    Write_I_b_rung_top(0);
-  }
-
-  Write_U_b_Y1_0(Read_I_b_rung_top());
-
-  /* ] finish series */
+    
+    if(!Read_U_b_RPL()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_RDO(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 5 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_0000(0);
+    Write_I_b_parThis_0000(Read_I_b_rung_top());
+    if(!Read_U_b_RDO()) {
+        Write_I_b_parThis_0000(0);
+    }
+    
+    if(Read_I_b_parThis_0000()) {
+        Write_I_b_parOut_0000(1);
+    }
+    Write_I_b_parThis_0000(Read_I_b_rung_top());
+    if(!Read_U_b_RADE()) {
+        Write_I_b_parThis_0000(0);
+    }
+    
+    if(Read_I_b_parThis_0000()) {
+        Write_I_b_parOut_0000(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_0000());
+    /* ] finish parallel */
+    Write_U_b_Y1_1(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 7 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_0001(0);
+    Write_I_b_parThis_0001(Read_I_b_rung_top());
+    if(!Read_U_b_XSF03()) {
+        Write_I_b_parThis_0001(0);
+    }
+    
+    if(Read_I_b_parThis_0001()) {
+        Write_I_b_parOut_0001(1);
+    }
+    Write_I_b_parThis_0001(Read_I_b_rung_top());
+    /* start series [ */
+    if(!Read_U_b_X1_7()) {
+        Write_I_b_parThis_0001(0);
+    }
+    
+    Write_I_b_scratch(Read_I_b_parThis_0001());
+    if(!Read_I_b_parThis_0001()) {
+        if(Read_I_b_oneShot_0000()) {
+            Write_I_b_parThis_0001(1);
+        }
+    } else {
+        Write_I_b_parThis_0001(0);
+    }
+    Write_I_b_oneShot_0000(Read_I_b_scratch());
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0001()) {
+        Write_I_b_parOut_0001(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_0001());
+    /* ] finish parallel */
+    if(Read_I_b_rung_top()) {
+        Write_U_b_RPL(1);
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 9 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_0002(0);
+    Write_I_b_parThis_0002(Read_I_b_rung_top());
+    /* start series [ */
+    if(!Read_U_b_X1_7()) {
+        Write_I_b_parThis_0002(0);
+    }
+    
+    Write_I_b_scratch(Read_I_b_parThis_0002());
+    if(Read_I_b_oneShot_0001()) {
+        Write_I_b_parThis_0002(0);
+    }
+    Write_I_b_oneShot_0001(Read_I_b_scratch());
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0002()) {
+        Write_I_b_parOut_0002(1);
+    }
+    Write_I_b_parThis_0002(Read_I_b_rung_top());
+    /* start series [ */
+    
+    
+    if(!Read_U_b_X1_1()) {
+        Write_I_b_parThis_0002(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0002()) {
+        Write_I_b_parOut_0002(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_0002());
+    /* ] finish parallel */
+    if(Read_I_b_rung_top()) {
+        Write_U_b_RPL(0);
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 11 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_7()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_Y1_2(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 13 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_0003(0);
+    Write_I_b_parThis_0003(Read_I_b_rung_top());
+    if(!Read_U_b_X1_7()) {
+        Write_I_b_parThis_0003(0);
+    }
+    
+    if(Read_I_b_parThis_0003()) {
+        Write_I_b_parOut_0003(1);
+    }
+    Write_I_b_parThis_0003(Read_I_b_rung_top());
+    if(Read_U_b_X1_6()) {
+        Write_I_b_parThis_0003(0);
+    }
+    
+    if(Read_I_b_parThis_0003()) {
+        Write_I_b_parOut_0003(1);
+    }
+    Write_I_b_parThis_0003(Read_I_b_rung_top());
+    if(Read_U_b_X1_0()) {
+        Write_I_b_parThis_0003(0);
+    }
+    
+    if(Read_I_b_parThis_0003()) {
+        Write_I_b_parOut_0003(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_0003());
+    /* ] finish parallel */
+    Write_U_b_RTRAVA(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 15 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_1()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_I_b_rung_top()) {
+        U_i_ANDAR = 1;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 16 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_2()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_I_b_rung_top()) {
+        U_i_ANDAR = 2;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 17 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_3()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_I_b_rung_top()) {
+        U_i_ANDAR = 3;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 18 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_4()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_I_b_rung_top()) {
+        U_i_ANDAR = 4;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 19 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_5()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_I_b_rung_top()) {
+        U_i_ANDAR = 5;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 22 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_0004(0);
+    Write_I_b_parThis_0004(Read_I_b_rung_top());
+    if(!Read_U_b_X2_1()) {
+        Write_I_b_parThis_0004(0);
+    }
+    
+    if(Read_I_b_parThis_0004()) {
+        Write_I_b_parOut_0004(1);
+    }
+    Write_I_b_parThis_0004(Read_I_b_rung_top());
+    if(!Read_U_b_Y3_1()) {
+        Write_I_b_parThis_0004(0);
+    }
+    
+    if(Read_I_b_parThis_0004()) {
+        Write_I_b_parOut_0004(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_0004());
+    /* ] finish parallel */
+    Write_I_b_scratch(Read_I_b_rung_top());
+    if(Read_I_b_oneShot_0002()) {
+        Write_I_b_rung_top(0);
+    }
+    Write_I_b_oneShot_0002(Read_I_b_scratch());
+    
+    if(Read_I_b_rung_top()) {
+        U_i_PED1 = 1;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 23 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_0005(0);
+    Write_I_b_parThis_0005(Read_I_b_rung_top());
+    if(!Read_U_b_X2_2()) {
+        Write_I_b_parThis_0005(0);
+    }
+    
+    if(Read_I_b_parThis_0005()) {
+        Write_I_b_parOut_0005(1);
+    }
+    Write_I_b_parThis_0005(Read_I_b_rung_top());
+    if(!Read_U_b_Y3_2()) {
+        Write_I_b_parThis_0005(0);
+    }
+    
+    if(Read_I_b_parThis_0005()) {
+        Write_I_b_parOut_0005(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_0005());
+    /* ] finish parallel */
+    Write_I_b_scratch(Read_I_b_rung_top());
+    if(Read_I_b_oneShot_0003()) {
+        Write_I_b_rung_top(0);
+    }
+    Write_I_b_oneShot_0003(Read_I_b_scratch());
+    
+    if(Read_I_b_rung_top()) {
+        U_i_PED2 = 2;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 24 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_0006(0);
+    Write_I_b_parThis_0006(Read_I_b_rung_top());
+    if(!Read_U_b_X2_3()) {
+        Write_I_b_parThis_0006(0);
+    }
+    
+    if(Read_I_b_parThis_0006()) {
+        Write_I_b_parOut_0006(1);
+    }
+    Write_I_b_parThis_0006(Read_I_b_rung_top());
+    if(!Read_U_b_Y3_3()) {
+        Write_I_b_parThis_0006(0);
+    }
+    
+    if(Read_I_b_parThis_0006()) {
+        Write_I_b_parOut_0006(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_0006());
+    /* ] finish parallel */
+    Write_I_b_scratch(Read_I_b_rung_top());
+    if(Read_I_b_oneShot_0004()) {
+        Write_I_b_rung_top(0);
+    }
+    Write_I_b_oneShot_0004(Read_I_b_scratch());
+    
+    if(Read_I_b_rung_top()) {
+        U_i_PED3 = 3;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 25 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_0007(0);
+    Write_I_b_parThis_0007(Read_I_b_rung_top());
+    if(!Read_U_b_X2_4()) {
+        Write_I_b_parThis_0007(0);
+    }
+    
+    if(Read_I_b_parThis_0007()) {
+        Write_I_b_parOut_0007(1);
+    }
+    Write_I_b_parThis_0007(Read_I_b_rung_top());
+    if(!Read_U_b_Y3_4()) {
+        Write_I_b_parThis_0007(0);
+    }
+    
+    if(Read_I_b_parThis_0007()) {
+        Write_I_b_parOut_0007(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_0007());
+    /* ] finish parallel */
+    Write_I_b_scratch(Read_I_b_rung_top());
+    if(Read_I_b_oneShot_0005()) {
+        Write_I_b_rung_top(0);
+    }
+    Write_I_b_oneShot_0005(Read_I_b_scratch());
+    
+    if(Read_I_b_rung_top()) {
+        U_i_PED4 = 4;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 26 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_0008(0);
+    Write_I_b_parThis_0008(Read_I_b_rung_top());
+    if(!Read_U_b_X2_5()) {
+        Write_I_b_parThis_0008(0);
+    }
+    
+    if(Read_I_b_parThis_0008()) {
+        Write_I_b_parOut_0008(1);
+    }
+    Write_I_b_parThis_0008(Read_I_b_rung_top());
+    if(!Read_U_b_Y3_5()) {
+        Write_I_b_parThis_0008(0);
+    }
+    
+    if(Read_I_b_parThis_0008()) {
+        Write_I_b_parOut_0008(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_0008());
+    /* ] finish parallel */
+    Write_I_b_scratch(Read_I_b_rung_top());
+    if(Read_I_b_oneShot_0006()) {
+        Write_I_b_rung_top(0);
+    }
+    Write_I_b_oneShot_0006(Read_I_b_scratch());
+    
+    if(Read_I_b_rung_top()) {
+        U_i_PED5 = 5;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 28 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_1()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(!Read_U_b_RDESL_PARADA()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_I_b_rung_top()) {
+        U_i_PED1 = 0;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 29 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_2()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(!Read_U_b_RDESL_PARADA()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_I_b_rung_top()) {
+        U_i_PED2 = 0;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 30 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_3()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(!Read_U_b_RDESL_PARADA()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_I_b_rung_top()) {
+        U_i_PED3 = 0;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 31 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_4()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(!Read_U_b_RDESL_PARADA()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_I_b_rung_top()) {
+        U_i_PED4 = 0;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 32 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_5()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(!Read_U_b_RDESL_PARADA()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_I_b_rung_top()) {
+        U_i_PED5 = 0;
+    }
+    
+    /* ] finish series */
+    
+    /* start rung 34 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(Read_U_b_X1_1()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_U_b_X1_2()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_U_b_X1_3()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_U_b_X1_4()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_U_b_X1_5()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_Rmove(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 36 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_0009(0);
+    Write_I_b_parThis_0009(Read_I_b_rung_top());
+    /* start series [ */
+    if(U_i_PED1 == U_i_ANDAR) {
+    } else {
+        Write_I_b_parThis_0009(0);
+    }
+    
+    if(Read_U_b_Rmove()) {
+        Write_I_b_parThis_0009(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0009()) {
+        Write_I_b_parOut_0009(1);
+    }
+    Write_I_b_parThis_0009(Read_I_b_rung_top());
+    /* start series [ */
+    if(U_i_PED2 == U_i_ANDAR) {
+    } else {
+        Write_I_b_parThis_0009(0);
+    }
+    
+    if(Read_U_b_Rmove()) {
+        Write_I_b_parThis_0009(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0009()) {
+        Write_I_b_parOut_0009(1);
+    }
+    Write_I_b_parThis_0009(Read_I_b_rung_top());
+    /* start series [ */
+    if(U_i_PED3 == U_i_ANDAR) {
+    } else {
+        Write_I_b_parThis_0009(0);
+    }
+    
+    if(Read_U_b_Rmove()) {
+        Write_I_b_parThis_0009(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0009()) {
+        Write_I_b_parOut_0009(1);
+    }
+    Write_I_b_parThis_0009(Read_I_b_rung_top());
+    /* start series [ */
+    if(U_i_PED4 == U_i_ANDAR) {
+    } else {
+        Write_I_b_parThis_0009(0);
+    }
+    
+    if(Read_U_b_Rmove()) {
+        Write_I_b_parThis_0009(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0009()) {
+        Write_I_b_parOut_0009(1);
+    }
+    Write_I_b_parThis_0009(Read_I_b_rung_top());
+    /* start series [ */
+    if(U_i_PED5 == U_i_ANDAR) {
+    } else {
+        Write_I_b_parThis_0009(0);
+    }
+    
+    if(Read_U_b_Rmove()) {
+        Write_I_b_parThis_0009(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0009()) {
+        Write_I_b_parOut_0009(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_0009());
+    /* ] finish parallel */
+    if(!Read_I_b_TPA_antiglitch()) {
+        U_i_TPA = 99;
+    }
+    Write_I_b_TPA_antiglitch(1);
+    if(!Read_I_b_rung_top()) {
+        if(U_i_TPA < 99) {
+            U_i_TPA++;
+            Write_I_b_rung_top(1);
+        }
+    } else {
+        U_i_TPA = 0;
+    }
+    
+    Write_U_b_RDESL_PARADA(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 38 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_1()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(!Read_U_b_RDESL_PARADA()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_Y1_3(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 39 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_2()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(!Read_U_b_RDESL_PARADA()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_Y1_4(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 40 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_3()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(!Read_U_b_RDESL_PARADA()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_Y1_5(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 41 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_4()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(!Read_U_b_RDESL_PARADA()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_Y1_6(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 42 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_X1_5()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(!Read_U_b_RDESL_PARADA()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_Y1_7(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 44 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_000a(0);
+    Write_I_b_parThis_000a(Read_I_b_rung_top());
+    /* start series [ */
+    I_i_scratch2 = 0;
+    if(U_i_PED1 == I_i_scratch2) {
+    } else {
+        Write_I_b_parThis_000a(0);
+    }
+    
+    I_i_scratch2 = 0;
+    if(U_i_PED2 == I_i_scratch2) {
+    } else {
+        Write_I_b_parThis_000a(0);
+    }
+    
+    I_i_scratch2 = 0;
+    if(U_i_PED3 == I_i_scratch2) {
+    } else {
+        Write_I_b_parThis_000a(0);
+    }
+    
+    I_i_scratch2 = 0;
+    if(U_i_PED4 == I_i_scratch2) {
+    } else {
+        Write_I_b_parThis_000a(0);
+    }
+    
+    I_i_scratch2 = 0;
+    if(U_i_PED5 == I_i_scratch2) {
+    } else {
+        Write_I_b_parThis_000a(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_000a()) {
+        Write_I_b_parOut_000a(1);
+    }
+    Write_I_b_parThis_000a(Read_I_b_rung_top());
+    /* start series [ */
+    if(!Read_U_b_RDE()) {
+        Write_I_b_parThis_000a(0);
+    }
+    
+    if(!Read_U_b_X1_1()) {
+        Write_I_b_parThis_000a(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_000a()) {
+        Write_I_b_parOut_000a(1);
+    }
+    Write_I_b_parThis_000a(Read_I_b_rung_top());
+    /* start series [ */
+    if(!Read_U_b_RSE()) {
+        Write_I_b_parThis_000a(0);
+    }
+    
+    if(!Read_U_b_X1_5()) {
+        Write_I_b_parThis_000a(0);
+    }
+    
+    
+    
+    
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_000a()) {
+        Write_I_b_parOut_000a(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_000a());
+    /* ] finish parallel */
+    Write_U_b_RFIM_PREF(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 46 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_Y1_1()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_Y2_1(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 48 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_Y1_0()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_Y2_0(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 50 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(U_i_ANDAR > U_i_PED1) {
+    } else {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(U_i_ANDAR > U_i_PED2) {
+    } else {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(U_i_ANDAR > U_i_PED3) {
+    } else {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(U_i_ANDAR > U_i_PED4) {
+    } else {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(U_i_ANDAR > U_i_PED5) {
+    } else {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_RFIM_PREF_S(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 52 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_000b(0);
+    Write_I_b_parThis_000b(Read_I_b_rung_top());
+    if(U_i_PED1 > U_i_ANDAR) {
+    } else {
+        Write_I_b_parThis_000b(0);
+    }
+    
+    if(Read_I_b_parThis_000b()) {
+        Write_I_b_parOut_000b(1);
+    }
+    Write_I_b_parThis_000b(Read_I_b_rung_top());
+    I_i_scratch2 = 0;
+    if(U_i_PED1 == I_i_scratch2) {
+    } else {
+        Write_I_b_parThis_000b(0);
+    }
+    
+    if(Read_I_b_parThis_000b()) {
+        Write_I_b_parOut_000b(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_000b());
+    /* ] finish parallel */
+    /* start parallel [ */
+    Write_I_b_parOut_000c(0);
+    Write_I_b_parThis_000c(Read_I_b_rung_top());
+    if(U_i_PED2 > U_i_ANDAR) {
+    } else {
+        Write_I_b_parThis_000c(0);
+    }
+    
+    if(Read_I_b_parThis_000c()) {
+        Write_I_b_parOut_000c(1);
+    }
+    Write_I_b_parThis_000c(Read_I_b_rung_top());
+    I_i_scratch2 = 0;
+    if(U_i_PED2 == I_i_scratch2) {
+    } else {
+        Write_I_b_parThis_000c(0);
+    }
+    
+    if(Read_I_b_parThis_000c()) {
+        Write_I_b_parOut_000c(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_000c());
+    /* ] finish parallel */
+    /* start parallel [ */
+    Write_I_b_parOut_000d(0);
+    Write_I_b_parThis_000d(Read_I_b_rung_top());
+    if(U_i_PED3 > U_i_ANDAR) {
+    } else {
+        Write_I_b_parThis_000d(0);
+    }
+    
+    if(Read_I_b_parThis_000d()) {
+        Write_I_b_parOut_000d(1);
+    }
+    Write_I_b_parThis_000d(Read_I_b_rung_top());
+    I_i_scratch2 = 0;
+    if(U_i_PED3 == I_i_scratch2) {
+    } else {
+        Write_I_b_parThis_000d(0);
+    }
+    
+    if(Read_I_b_parThis_000d()) {
+        Write_I_b_parOut_000d(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_000d());
+    /* ] finish parallel */
+    /* start parallel [ */
+    Write_I_b_parOut_000e(0);
+    Write_I_b_parThis_000e(Read_I_b_rung_top());
+    if(U_i_PED4 > U_i_ANDAR) {
+    } else {
+        Write_I_b_parThis_000e(0);
+    }
+    
+    if(Read_I_b_parThis_000e()) {
+        Write_I_b_parOut_000e(1);
+    }
+    Write_I_b_parThis_000e(Read_I_b_rung_top());
+    I_i_scratch2 = 0;
+    if(U_i_PED4 == I_i_scratch2) {
+    } else {
+        Write_I_b_parThis_000e(0);
+    }
+    
+    if(Read_I_b_parThis_000e()) {
+        Write_I_b_parOut_000e(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_000e());
+    /* ] finish parallel */
+    /* start parallel [ */
+    Write_I_b_parOut_000f(0);
+    Write_I_b_parThis_000f(Read_I_b_rung_top());
+    if(U_i_PED5 > U_i_ANDAR) {
+    } else {
+        Write_I_b_parThis_000f(0);
+    }
+    
+    if(Read_I_b_parThis_000f()) {
+        Write_I_b_parOut_000f(1);
+    }
+    Write_I_b_parThis_000f(Read_I_b_rung_top());
+    I_i_scratch2 = 0;
+    if(U_i_PED5 == I_i_scratch2) {
+    } else {
+        Write_I_b_parThis_000f(0);
+    }
+    
+    if(Read_I_b_parThis_000f()) {
+        Write_I_b_parOut_000f(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_000f());
+    /* ] finish parallel */
+    Write_U_b_RFIM_PREF_D(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 54 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_0010(0);
+    Write_I_b_parThis_0010(Read_I_b_rung_top());
+    /* start series [ */
+    I_i_scratch2 = 0;
+    if(U_i_PED1 == I_i_scratch2) {
+        Write_I_b_parThis_0010(0);
+    }
+    
+    if(U_i_ANDAR > U_i_PED1) {
+    } else {
+        Write_I_b_parThis_0010(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0010()) {
+        Write_I_b_parOut_0010(1);
+    }
+    Write_I_b_parThis_0010(Read_I_b_rung_top());
+    /* start series [ */
+    I_i_scratch2 = 0;
+    if(U_i_PED2 == I_i_scratch2) {
+        Write_I_b_parThis_0010(0);
+    }
+    
+    if(U_i_ANDAR > U_i_PED2) {
+    } else {
+        Write_I_b_parThis_0010(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0010()) {
+        Write_I_b_parOut_0010(1);
+    }
+    Write_I_b_parThis_0010(Read_I_b_rung_top());
+    /* start series [ */
+    I_i_scratch2 = 0;
+    if(U_i_PED3 == I_i_scratch2) {
+        Write_I_b_parThis_0010(0);
+    }
+    
+    if(U_i_ANDAR > U_i_PED3) {
+    } else {
+        Write_I_b_parThis_0010(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0010()) {
+        Write_I_b_parOut_0010(1);
+    }
+    Write_I_b_parThis_0010(Read_I_b_rung_top());
+    /* start series [ */
+    I_i_scratch2 = 0;
+    if(U_i_PED4 == I_i_scratch2) {
+        Write_I_b_parThis_0010(0);
+    }
+    
+    if(U_i_ANDAR > U_i_PED4) {
+    } else {
+        Write_I_b_parThis_0010(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0010()) {
+        Write_I_b_parOut_0010(1);
+    }
+    Write_I_b_parThis_0010(Read_I_b_rung_top());
+    /* start series [ */
+    I_i_scratch2 = 0;
+    if(U_i_PED5 == I_i_scratch2) {
+        Write_I_b_parThis_0010(0);
+    }
+    
+    if(U_i_ANDAR > U_i_PED5) {
+    } else {
+        Write_I_b_parThis_0010(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0010()) {
+        Write_I_b_parOut_0010(1);
+    }
+    Write_I_b_parThis_0010(Read_I_b_rung_top());
+    if(!Read_U_b_RPREF_DESCER()) {
+        Write_I_b_parThis_0010(0);
+    }
+    
+    if(Read_I_b_parThis_0010()) {
+        Write_I_b_parOut_0010(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_0010());
+    /* ] finish parallel */
+    if(Read_U_b_RPREF_SOBE()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_U_b_RFIM_PREF_D()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_U_b_RFIM_PREF()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_RPREF_DESCER(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 56 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_0011(0);
+    Write_I_b_parThis_0011(Read_I_b_rung_top());
+    /* start series [ */
+    I_i_scratch2 = 0;
+    if(U_i_PED1 == I_i_scratch2) {
+        Write_I_b_parThis_0011(0);
+    }
+    
+    if(U_i_ANDAR > U_i_PED1) {
+    } else {
+        Write_I_b_parThis_0011(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0011()) {
+        Write_I_b_parOut_0011(1);
+    }
+    Write_I_b_parThis_0011(Read_I_b_rung_top());
+    /* start series [ */
+    I_i_scratch2 = 0;
+    if(U_i_PED2 == I_i_scratch2) {
+        Write_I_b_parThis_0011(0);
+    }
+    
+    if(U_i_ANDAR > U_i_PED2) {
+    } else {
+        Write_I_b_parThis_0011(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0011()) {
+        Write_I_b_parOut_0011(1);
+    }
+    Write_I_b_parThis_0011(Read_I_b_rung_top());
+    /* start series [ */
+    I_i_scratch2 = 0;
+    if(U_i_PED3 == I_i_scratch2) {
+        Write_I_b_parThis_0011(0);
+    }
+    
+    if(U_i_ANDAR > U_i_PED3) {
+    } else {
+        Write_I_b_parThis_0011(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0011()) {
+        Write_I_b_parOut_0011(1);
+    }
+    Write_I_b_parThis_0011(Read_I_b_rung_top());
+    /* start series [ */
+    I_i_scratch2 = 0;
+    if(U_i_PED4 == I_i_scratch2) {
+        Write_I_b_parThis_0011(0);
+    }
+    
+    if(U_i_ANDAR > U_i_PED4) {
+    } else {
+        Write_I_b_parThis_0011(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0011()) {
+        Write_I_b_parOut_0011(1);
+    }
+    Write_I_b_parThis_0011(Read_I_b_rung_top());
+    /* start series [ */
+    I_i_scratch2 = 0;
+    if(U_i_PED5 == I_i_scratch2) {
+        Write_I_b_parThis_0011(0);
+    }
+    
+    if(U_i_ANDAR > U_i_PED5) {
+    } else {
+        Write_I_b_parThis_0011(0);
+    }
+    
+    /* ] finish series */
+    if(Read_I_b_parThis_0011()) {
+        Write_I_b_parOut_0011(1);
+    }
+    Write_I_b_parThis_0011(Read_I_b_rung_top());
+    if(!Read_U_b_RPREF_DESCER()) {
+        Write_I_b_parThis_0011(0);
+    }
+    
+    if(Read_I_b_parThis_0011()) {
+        Write_I_b_parOut_0011(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_0011());
+    /* ] finish parallel */
+    if(Read_U_b_RPREF_SOBE()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_U_b_RTRAVA()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_U_b_RDESL_PARADA()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_U_b_RFIM_PREF()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_RADE(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 58 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    /* start parallel [ */
+    Write_I_b_parOut_0012(0);
+    Write_I_b_parThis_0012(Read_I_b_rung_top());
+    if(U_i_PED2 > U_i_ANDAR) {
+    } else {
+        Write_I_b_parThis_0012(0);
+    }
+    
+    if(Read_I_b_parThis_0012()) {
+        Write_I_b_parOut_0012(1);
+    }
+    Write_I_b_parThis_0012(Read_I_b_rung_top());
+    if(U_i_PED3 > U_i_ANDAR) {
+    } else {
+        Write_I_b_parThis_0012(0);
+    }
+    
+    if(Read_I_b_parThis_0012()) {
+        Write_I_b_parOut_0012(1);
+    }
+    Write_I_b_parThis_0012(Read_I_b_rung_top());
+    if(U_i_PED4 > U_i_ANDAR) {
+    } else {
+        Write_I_b_parThis_0012(0);
+    }
+    
+    if(Read_I_b_parThis_0012()) {
+        Write_I_b_parOut_0012(1);
+    }
+    Write_I_b_parThis_0012(Read_I_b_rung_top());
+    if(U_i_PED5 > U_i_ANDAR) {
+    } else {
+        Write_I_b_parThis_0012(0);
+    }
+    
+    if(Read_I_b_parThis_0012()) {
+        Write_I_b_parOut_0012(1);
+    }
+    Write_I_b_parThis_0012(Read_I_b_rung_top());
+    if(!Read_U_b_RPREF_SOBE()) {
+        Write_I_b_parThis_0012(0);
+    }
+    
+    if(Read_I_b_parThis_0012()) {
+        Write_I_b_parOut_0012(1);
+    }
+    Write_I_b_rung_top(Read_I_b_parOut_0012());
+    /* ] finish parallel */
+    if(Read_U_b_RPREF_DESCER()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_U_b_RFIM_PREF_S()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_U_b_RFIM_PREF()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_RPREF_SOBE(Read_I_b_rung_top());
+    
+    /* ] finish series */
+    
+    /* start rung 60 */
+    Write_I_b_rung_top(Read_I_b_mcr());
+    
+    /* start series [ */
+    if(!Read_U_b_RPREF_SOBE()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_U_b_RTRAVA()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_U_b_RDESL_PARADA()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    if(Read_U_b_Y1_1()) {
+        Write_I_b_rung_top(0);
+    }
+    
+    Write_U_b_Y1_0(Read_I_b_rung_top());
+    
+    /* ] finish series */
 }
