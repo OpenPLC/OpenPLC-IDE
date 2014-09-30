@@ -30,7 +30,7 @@ opinput.openplc.firmware=inputBoard/inputBoard.cpp.hex
 opinput.build.mcu=atmega328p
 opinput.build.f_cpu=16000000L
 opinput.build.board=AVR_UNO
-opinput.build.core=arduino:arduino
+opinput.build.core=arduino
 opinput.build.variant=iocard
 
 ##############################################################
@@ -62,7 +62,7 @@ opinput.openplc.firmware=outputBoard/outputBoard.cpp.hex
 opoutput.build.mcu=atmega328p
 opoutput.build.f_cpu=16000000L
 opoutput.build.board=AVR_UNO
-opoutput.build.core=arduino:arduino
+opoutput.build.core=arduino
 opoutput.build.variant=iocard
 
 ##############################################################
@@ -84,7 +84,7 @@ opmain.bootloader.unlock_bits=0x3F
 opmain.bootloader.lock_bits=0x0F
 
 opmain.build.f_cpu=16000000L
-opmain.build.core=arduino:arduino
+opmain.build.core=arduino
 opmain.build.variant=cpucard
 # default board  may be overridden by the cpu menu
 opmain.build.board=AVR_MEGA2560
